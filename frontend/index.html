@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VitalPet | 活力宠物</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="pet-stage" aria-label="VitalPet">
+        <header class="top-bar">
+          <div>
+            <p class="eyebrow">VitalPet</p>
+            <h1>活力宠物</h1>
+          </div>
+          <div class="user-chip" id="activeUser">Guest</div>
+        </header>
+
+        <div class="scene">
+          <div class="pixel-sun"></div>
+          <div class="cloud cloud-a"></div>
+          <div class="cloud cloud-b"></div>
+          <div class="cat-wrap" id="catWrap">
+            <img src="catcat.png" alt="白色像素猫" class="cat" />
+            <span class="float-exp" id="floatExp">+10 EXP</span>
+          </div>
+          <div class="floor"></div>
+        </div>
+
+        <section class="status-panel" aria-label="宠物状态">
+          <div class="stat">
+            <span>Level</span>
+            <strong id="levelValue">1</strong>
+          </div>
+          <div class="stat exp-stat">
+            <div class="exp-head">
+              <span>EXP</span>
+              <strong id="expValue">0 / 100</strong>
+            </div>
+            <div class="exp-track" aria-hidden="true">
+              <div class="exp-fill" id="expFill"></div>
+            </div>
+          </div>
+          <div class="stat">
+            <span>Food</span>
+            <strong id="foodValue">0</strong>
+          </div>
+        </section>
+
+        <button class="feed-button" id="feedButton" type="button">Feed 喂食</button>
+        <p class="message" id="message" role="status"></p>
+      </section>
+
+      <aside class="bind-panel" aria-label="设备绑定">
+        <div class="login-block">
+          <label for="usernameInput">Username</label>
+          <div class="login-row">
+            <input id="usernameInput" autocomplete="username" placeholder="apple_user_1" />
+            <button id="loginButton" type="button">Login</button>
+          </div>
+        </div>
+
+        <div class="qr-block">
+          <p class="panel-title">Scan to Bind Apple Watch</p>
+          <div class="qr-frame">
+            <img id="qrImage" alt="VitalPet shortcut QR code" />
+          </div>
+          <code class="shortcut-code">VitalPet 数据同步</code>
+        </div>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
