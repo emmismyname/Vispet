@@ -1,4 +1,4 @@
-const SHORTCUT_URL = "https://www.icloud.com/shortcuts/REPLACE_WITH_YOUR_VITALPET_SHORTCUT";
+const SHORTCUT_URL = "https://www.icloud.com/shortcuts/bf6fea89dbcc4a89a2c4ee248407e0e7";
 
 const apiBase = window.location.protocol === "file:" ? "http://localhost:5000" : "";
 const usernameInput = document.querySelector("#usernameInput");
