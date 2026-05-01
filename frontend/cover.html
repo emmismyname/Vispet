@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VitalPet Poster</title>
+    <style>
+      :root {
+        --ink: #252334;
+        --paper: #fff8e8;
+        --mint: #8bd8bd;
+        --coral: #ff7f6e;
+        --berry: #d84f7a;
+        --gold: #ffd166;
+        --sky: #8fd5ff;
+        --shadow: #17151f;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 24px;
+        color: var(--ink);
+        background:
+          linear-gradient(0deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+          #17151f;
+        background-size: 24px 24px;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      button,
+      a {
+        font: inherit;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .poster-wrapper {
+        width: min(100%, 540px);
+        aspect-ratio: 3 / 4;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 8%;
+        border: 4px solid var(--ink);
+        background:
+          linear-gradient(#8fd5ff 0 54%, #78c86c 54% 100%);
+        box-shadow: 8px 8px 0 var(--shadow);
+      }
+
+      .poster-wrapper::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(0deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
+        background-size: 20px 20px;
+        pointer-events: none;
+      }
+
+      .pixel-sun {
+        position: absolute;
+        top: 8%;
+        right: 9%;
+        width: 13%;
+        aspect-ratio: 1;
+        border: 4px solid var(--ink);
+        background: var(--gold);
+        box-shadow: 0 0 0 8px rgba(255, 209, 102, 0.25);
+      }
+
+      .poster-cat {
+        position: absolute;
+        right: 4%;
+        bottom: 16%;
+        width: 45%;
+        image-rendering: pixelated;
+        filter: drop-shadow(8px 10px 0 rgba(37, 35, 52, 0.24));
+      }
+
+      .poster-fish {
+        position: absolute;
+        left: 10%;
+        bottom: 14%;
+        width: 16%;
+        image-rendering: pixelated;
+        transform: rotate(-8deg);
+      }
+
+      .text-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        max-width: 76%;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: var(--berry);
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(44px, 11vw, 78px);
+        line-height: 0.92;
+        letter-spacing: 0;
+      }
+
+      .intro {
+        margin: 0;
+        max-width: 30ch;
+        font-size: clamp(16px, 3vw, 22px);
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      .poster-stats {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .stat-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        border: 3px solid var(--ink);
+        background: var(--paper);
+        box-shadow: 4px 4px 0 var(--ink);
+        font-weight: 700;
+      }
+
+      .stat-chip img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        image-rendering: pixelated;
+      }
+
+      .action-area {
+        width: 100%;
+        max-width: 540px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .action-button {
+        min-height: 52px;
+        flex: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 18px;
+        border: 3px solid var(--paper);
+        color: var(--paper);
+        background: transparent;
+        box-shadow: 4px 4px 0 rgba(255, 248, 232, 0.4);
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      .action-button-primary {
+        border-color: var(--ink);
+        color: #fff;
+        background: var(--coral);
+        box-shadow: 4px 4px 0 var(--ink);
+      }
+
+      .action-button:hover,
+      .action-button:focus-visible {
+        transform: translate(-1px, -1px);
+      }
+
+      .action-button:active {
+        transform: translate(3px, 3px);
+        box-shadow: 1px 1px 0 var(--ink);
+      }
+
+      @media (max-height: 760px) {
+        body {
+          justify-content: flex-start;
+        }
+
+        .poster-wrapper {
+          width: min(100%, 430px);
+        }
+      }
+
+      @media (max-width: 520px) {
+        body {
+          padding: 16px;
+        }
+
+        .poster-wrapper {
+          padding: 8%;
+        }
+
+        .text-content {
+          max-width: 84%;
+          gap: 16px;
+        }
+
+        .poster-cat {
+          width: 50%;
+          right: -2%;
+        }
+
+        .action-area {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="capture-area" class="poster-wrapper" aria-label="VitalPet poster">
+      <div class="pixel-sun"></div>
+      <img class="poster-cat" src="assets/cat_idle.png" alt="White pixel cat" />
+      <img class="poster-fish" src="assets/icon_fish.png" alt="" />
+
+      <div class="text-content">
+        <p class="eyebrow">Move. Feed. Grow.</p>
+        <h1>VitalPet</h1>
+        <p class="intro">A retro pixel pet powered by your real daily steps.</p>
+      </div>
+
+      <div class="poster-stats" aria-label="Poster features">
+        <span class="stat-chip">
+          <img src="assets/icon_fish.png" alt="" />
+          Earn Food
+        </span>
+        <span class="stat-chip">
+          <img src="assets/icon_star.png" alt="" />
+          Gain EXP
+        </span>
+      </div>
+    </section>
+
+    <div class="action-area" aria-label="Poster actions">
+      <a class="action-button" href="index.html">Enter App</a>
+      <button class="action-button action-button-primary" id="savePosterButton" type="button">Save Poster</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script>
+      const savePosterButton = document.querySelector("#savePosterButton");
+      const captureArea = document.querySelector("#capture-area");
+
+      savePosterButton.addEventListener("click", async () => {
+        if (!window.html2canvas) {
+          alert("Poster export is not available yet. Please try again after the page finishes loading.");
+          return;
+        }
+
+        const canvas = await window.html2canvas(captureArea, {
+          backgroundColor: null,
+          scale: 2,
+          useCORS: true,
+        });
+
+        const link = document.createElement("a");
+        link.download = "vitalpet-poster.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    </script>
+  </body>
+</html>
