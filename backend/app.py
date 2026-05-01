@@ -26,7 +26,7 @@ def init_db():
             CREATE TABLE IF NOT EXISTS users (
                 username TEXT PRIMARY KEY,
                 total_steps INTEGER NOT NULL DEFAULT 0,
-                food_rations INTEGER NOT NULL DEFAULT 0,
+                food_rations INTEGER NOT NULL DEFAULT 10,
                 pet_level INTEGER NOT NULL DEFAULT 1,
                 pet_exp INTEGER NOT NULL DEFAULT 0
             )
@@ -62,7 +62,7 @@ def get_or_create_user(conn, username):
         conn.execute(
             """
             INSERT INTO users (username, total_steps, food_rations, pet_level, pet_exp)
-            VALUES (?, 0, 0, 1, 0)
+            VALUES (?, 0, 10, 1, 0)
             """,
             (username,),
         )

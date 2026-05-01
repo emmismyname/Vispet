@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bind Phone | VitalPet</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="bind-page">
+      <header class="bind-hero">
+        <div>
+          <p class="eyebrow">VitalPet Setup</p>
+          <h1>Bind Your Phone</h1>
+        </div>
+        <a class="nav-button nav-button-secondary" href="index.html">Back</a>
+      </header>
+
+      <section class="setup-stack" aria-label="Phone binding steps">
+        <section class="setup-step qr-step" aria-labelledby="installTitle">
+          <div class="step-heading">
+            <div class="step-badge">1</div>
+            <div class="step-copy">
+              <h2 id="installTitle">Install Shortcut</h2>
+              <p>Scan the QR code with your iPhone camera, then add the VitalPet shortcut.</p>
+            </div>
+          </div>
+
+          <div class="qr-frame qr-frame-large">
+            <img data-qr-code alt="VitalPet iOS Shortcut QR code" />
+          </div>
+          <code class="shortcut-code shortcut-code-compact" data-shortcut-link>VitalPet Health Sync</code>
+        </section>
+
+        <section class="setup-step permission-guide" aria-labelledby="healthTitle">
+          <div class="step-heading">
+            <div class="step-badge">2</div>
+            <div class="step-copy">
+              <h2 id="healthTitle">Approve Health Access</h2>
+              <p>Apple protects Health data, so the first run needs one manual approval.</p>
+            </div>
+          </div>
+
+          <ol class="permission-list">
+            <li>
+              <span class="pixel-icon">A</span>
+              <div>
+                <strong>Run the shortcut once</strong>
+                <p>If this message appears, Shortcuts still needs permission to read Steps.</p>
+              </div>
+            </li>
+            <li>
+              <span class="pixel-icon">B</span>
+              <div>
+                <strong>Tap Allow or Turn On All</strong>
+                <p>When the Health permission sheet appears, enable every requested category.</p>
+              </div>
+            </li>
+            <li>
+              <span class="pixel-icon">C</span>
+              <div>
+                <strong>Confirm Steps is enabled</strong>
+                <p>The Steps switch should be green. Then run the shortcut again to sync.</p>
+              </div>
+            </li>
+          </ol>
+
+          <article class="step-card">
+            <div class="card-icon">!</div>
+            <div class="card-content">
+              <h3>No Samples Found</h3>
+              <p>This is the common warning shown before Health permission is granted.</p>
+            </div>
+            <img
+              class="guide-shot guide-shot-wide"
+              src="assets/bind/no-samples-found.jpg"
+              alt="iPhone message saying Shortcuts needs access to Health step samples"
+            />
+          </article>
+        </section>
+
+        <section class="setup-step" aria-labelledby="fixTitle">
+          <div class="step-heading">
+            <div class="step-badge">3</div>
+            <div class="step-copy">
+              <h2 id="fixTitle">Fix Permissions Later</h2>
+              <p>If you tapped Don't Allow before, open Settings and turn Steps back on for Shortcuts.</p>
+            </div>
+          </div>
+
+          <div class="step-card-container">
+            <article class="step-card">
+              <div class="card-icon">1</div>
+              <div class="card-content">
+                <h3>Open Settings, then Health</h3>
+                <p>Go to Settings, scroll to Apps, then choose Health.</p>
+              </div>
+              <div class="guide-shot-pair">
+                <img class="guide-shot guide-shot-icon" src="assets/bind/settings-app-icon.jpg" alt="iPhone Settings app icon" />
+                <img
+                  class="guide-shot"
+                  src="assets/bind/settings-apps-health-shortcuts.jpg"
+                  alt="iPhone Settings Apps list showing Health and Shortcuts"
+                />
+              </div>
+            </article>
+
+            <article class="step-card">
+              <div class="card-icon">2</div>
+              <div class="card-content">
+                <h3>Open Data Access & Devices</h3>
+                <p>Inside Health, tap Data Access & Devices, then find Shortcuts in the app sources.</p>
+              </div>
+              <div class="guide-shot-pair">
+                <img
+                  class="guide-shot"
+                  src="assets/bind/health-data-access-devices.jpg"
+                  alt="Health settings page showing Data Access and Devices"
+                />
+                <img class="guide-shot" src="assets/bind/health-sources-apps.jpg" alt="Health Sources page showing Health in Apps" />
+              </div>
+            </article>
+
+            <article class="step-card">
+              <div class="card-icon">3</div>
+              <div class="card-content">
+                <h3>Allow Shortcuts to read Steps</h3>
+                <p>If the top button says Turn Off All and Steps is green, the setup is correct.</p>
+              </div>
+              <div class="guide-shot-pair">
+                <img
+                  class="guide-shot"
+                  src="assets/bind/shortcuts-steps-enabled.jpg"
+                  alt="Shortcuts Health permission page with Steps enabled"
+                />
+                <img
+                  class="guide-shot"
+                  src="assets/bind/shortcuts-steps-enabled-close.jpg"
+                  alt="Close-up of Shortcuts Steps permission toggle enabled"
+                />
+              </div>
+            </article>
+          </div>
+
+          <div class="troubleshoot">
+            <strong>Path</strong>
+            <p>Settings &gt; Apps &gt; Health &gt; Data Access &amp; Devices &gt; Shortcuts &gt; Steps</p>
+          </div>
+        </section>
+      </section>
+
+      <nav class="bind-actions" aria-label="Binding navigation">
+        <a class="nav-button nav-button-secondary" href="index.html">Back</a>
+        <a class="nav-button nav-button-primary" href="index.html">Binding Complete</a>
+      </nav>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
