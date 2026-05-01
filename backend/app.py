@@ -83,6 +83,11 @@ def add_cors_headers(response):
 
 
 @app.route("/")
+def cover():
+    return send_from_directory(FRONTEND_DIR, "cover.html")
+
+
+@app.route("/index.html")
 def index():
     return send_from_directory(FRONTEND_DIR, "index.html")
 

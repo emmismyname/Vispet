@@ -68,10 +68,9 @@ a {
 }
 
 .help-wrap {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  z-index: 5;
+  position: relative;
+  z-index: 10;
+  flex: 0 0 auto;
 }
 
 .help-button {
@@ -89,8 +88,8 @@ a {
 
 .help-tooltip {
   position: absolute;
-  top: 48px;
-  left: 0;
+  top: calc(100% + 12px);
+  right: 0;
   width: min(300px, calc(100vw - 42px));
   padding: 14px;
   border: 3px solid var(--ink);
@@ -127,9 +126,17 @@ a {
 
 .top-bar {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -857,10 +864,15 @@ input {
 
   .top-bar {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .user-chip {
     max-width: 100%;
+  }
+
+  .top-actions {
+    justify-content: space-between;
   }
 
   .cloud-b {
@@ -880,12 +892,9 @@ input {
     padding: 18px 0 28px;
   }
 
-  .help-wrap {
-    top: 10px;
-    left: 10px;
-  }
-
   .help-tooltip {
+    left: 0;
+    right: auto;
     width: min(290px, calc(100vw - 28px));
   }
 
